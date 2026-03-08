@@ -1,0 +1,2 @@
+# manifesto
+Curv manifesto
