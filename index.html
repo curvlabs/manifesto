@@ -1,224 +1,246 @@
-import { useState } from "react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curv — Brand Direction</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #0e0e0e; color: #c0c0c0; font-family: 'DM Sans', sans-serif; -webkit-font-smoothing: antialiased; }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useState } = React;
 
-function Section({ title, children }) {
-  return (
-    <div style={{ marginBottom: "56px" }}>
-      <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "28px", fontWeight: 400, color: "#e8e8e8", marginBottom: "16px", lineHeight: 1.2 }}>{title}</h2>
-      <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", lineHeight: 1.8, color: "#b0b0b0" }}>{children}</div>
-    </div>
-  );
-}
-
-function Divider() {
-  return <div style={{ width: "40px", height: "1px", background: "#333", margin: "48px 0" }} />;
-}
-
-export default function CurvBrandDoc() {
-  const [activeTab, setActiveTab] = useState("philosophy");
-
-  const tabs = [
-    { id: "philosophy", label: "Philosophy" },
-    { id: "directions", label: "Art Direction" },
-    { id: "films", label: "Video Ideas" },
-    { id: "lexicon", label: "Lexicon" },
-    { id: "products", label: "Product Ideas" },
-  ];
-
-  const lexiconLines = [
-    { line: "The health just happens.", tier: "core" },
-    { line: "Your identity is not your health. It's everything else you do with your health.", tier: "core" },
-    { line: "The body is an instrument to play.", tier: "core" },
-    { line: "Beautiful objects which free you to try things. To play.", tier: "high" },
-    { line: "A healthy life is an interesting life.", tier: "high" },
-    { line: "Scan me if you love me. Scan me if I'm dying.", tier: "high" },
-    { line: "Why should wanting to be healthy punish you with something ugly to wear?", tier: "high" },
-    { line: "You just need a nudge. Here and there. When it matters.", tier: "mid" },
-    { line: "Do what you want. I'll look after you.", tier: "mid" },
-    { line: "The only thing more powerful than sex is the insinuation of its possibility.", tier: "mid" },
-    { line: "By becoming an optimisation bro, you basically brand yourself a boring unfuckable schmuck.", tier: "mid" },
-    { line: "Optimisation is joyless. Curv takes you back to play.", tier: "mid" },
-  ];
-
-  return (
-    <div style={{ background: "#0e0e0e", color: "#c0c0c0", minHeight: "100vh", fontFamily: "'DM Sans', sans-serif" }}>
-      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
-
-      <div style={{ padding: "48px 32px 0", maxWidth: "720px", margin: "0 auto" }}>
-        <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "10px", letterSpacing: "3px", color: "#555", marginBottom: "24px" }}>CURV — BRAND DIRECTION</p>
-        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(36px, 6vw, 52px)", fontWeight: 400, color: "#f0f0f0", lineHeight: 1.1, marginBottom: "16px" }}>Your identity is not your health.</h1>
-        <p style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(36px, 6vw, 52px)", fontWeight: 400, fontStyle: "italic", color: "#666", lineHeight: 1.1, marginBottom: "40px" }}>It's everything else you do with it.</p>
-      </div>
-
-      <div style={{ position: "sticky", top: 0, zIndex: 10, background: "#0e0e0e", borderBottom: "1px solid #1a1a1a", padding: "0 32px" }}>
-        <div style={{ maxWidth: "720px", margin: "0 auto", display: "flex", gap: "24px", overflowX: "auto", paddingBottom: "1px" }}>
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              style={{
-                background: "none",
-                border: "none",
-                borderBottom: activeTab === tab.id ? "1px solid #e8e8e8" : "1px solid transparent",
-                padding: "16px 0",
-                fontFamily: "'DM Mono', monospace",
-                fontSize: "11px",
-                letterSpacing: "1.5px",
-                color: activeTab === tab.id ? "#e8e8e8" : "#555",
-                cursor: "pointer",
-                whiteSpace: "nowrap",
-                transition: "all 0.2s",
-              }}
-            >
-              {tab.label}
-            </button>
-          ))}
+    function Section({ title, children }) {
+      return (
+        <div style={{ marginBottom: "56px" }}>
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "28px", fontWeight: 400, color: "#e8e8e8", marginBottom: "16px", lineHeight: 1.2 }}>{title}</h2>
+          <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", lineHeight: 1.8, color: "#b0b0b0" }}>{children}</div>
         </div>
-      </div>
+      );
+    }
 
-      <div style={{ padding: "48px 32px 96px", maxWidth: "720px", margin: "0 auto" }}>
+    function Divider() {
+      return <div style={{ width: "40px", height: "1px", background: "#333", margin: "48px 0" }} />;
+    }
 
-        {activeTab === "philosophy" && (
-          <div>
-            <Section title="The Core">
-              <p style={{ marginBottom: "20px" }}>With Curv, the health just happens.</p>
-              <p style={{ marginBottom: "20px" }}>It's either something worth wearing, or completely out of sight, out of mind.</p>
-              <p style={{ marginBottom: "20px" }}>Your identity isn't your health, it's everything else you do with it.</p>
-              <p style={{ marginBottom: "20px" }}>You build identity around the things Curv frees you to do. The camera is always pointed at the life. Curv is in the peripheral vision.</p>
-              <p style={{ marginBottom: "20px" }}>Like the duck, composed on the surface, legs working underneath. The work is happening but it's nobody's business.</p>
-              <p>The health just happens.</p>
-            </Section>
+    function CurvBrandDoc() {
+      const [activeTab, setActiveTab] = useState("philosophy");
 
-            <Divider />
+      const tabs = [
+        { id: "philosophy", label: "Philosophy" },
+        { id: "directions", label: "Art Direction" },
+        { id: "films", label: "Video Ideas" },
+        { id: "lexicon", label: "Lexicon" },
+        { id: "products", label: "Product Ideas" },
+      ];
 
-            <Section title="The Enemy">
-              <p style={{ marginBottom: "20px" }}>The joylessness of optimisation.</p>
-              <p style={{ marginBottom: "20px" }}>Endless optimisation is sexless.</p>
-              <p style={{ marginBottom: "20px" }}>Desexualization of your body in the name of optimizing it. What's the point of being healthier, if you aren't sexier? Nothing is more sexy than being at play. So confident in yourself, that you're nonchalant.</p>
-              <p style={{ marginBottom: "20px" }}>Whoop, Oura etc. make you a slave to this score. What's the point of health if we become robots.</p>
-              <p style={{ marginBottom: "20px" }}>And after asking you to endlessly optimise, to add insult to injury, they mare you with ugly jewellery.</p>
-              <p>They make you mark yourself as a bro who's going to pull out his phone on a hinge date and stick it in the poor girls face, showing her all his stats. Just to be healthy? No thanks. Tech is not cool. Tech is a tool. Don't make it the identity.</p>
-            </Section>
+      const lexiconLines = [
+        { line: "The health just happens.", tier: "core" },
+        { line: "Your identity is not your health. It\u2019s everything else you do with your health.", tier: "core" },
+        { line: "The body is an instrument to play.", tier: "core" },
+        { line: "Beautiful objects which free you to try things. To play.", tier: "high" },
+        { line: "A healthy life is an interesting life.", tier: "high" },
+        { line: "Scan me if you love me. Scan me if I\u2019m dying.", tier: "high" },
+        { line: "Why should wanting to be healthy punish you with something ugly to wear?", tier: "high" },
+        { line: "You just need a nudge. Here and there. When it matters.", tier: "mid" },
+        { line: "Do what you want. I\u2019ll look after you.", tier: "mid" },
+        { line: "The only thing more powerful than sex is the insinuation of its possibility.", tier: "mid" },
+        { line: "By becoming an optimisation bro, you basically brand yourself a boring unfuckable schmuck.", tier: "mid" },
+        { line: "Optimisation is joyless. Curv takes you back to play.", tier: "mid" },
+      ];
 
-            <Divider />
+      return (
+        <div style={{ background: "#0e0e0e", color: "#c0c0c0", minHeight: "100vh", fontFamily: "'DM Sans', sans-serif" }}>
 
-            <Section title="The Belief">
-              <p style={{ marginBottom: "20px" }}>Your body is an instrument to play. It is not a fragile glass house. It is adaptable. You are adaptable. Strong bodies are beautiful, sexualised objects.</p>
-              <p style={{ marginBottom: "20px" }}>Curv makes objects which free from health ailments, to do whatever you actually want to spend time.</p>
-              <p style={{ marginBottom: "20px" }}>These objects are either beautiful or invisible, but never inbetween.</p>
-              <p style={{ marginBottom: "20px" }}>We are here to increase your agency, not decrease it by anchoring you to some score.</p>
-              <p style={{ marginBottom: "20px" }}>You don't need to optimise, you just need a nudge here and there, when it matters.</p>
-              <p>Leading an interesting life. The health just happens.</p>
-            </Section>
+          <div style={{ padding: "48px 32px 0", maxWidth: "720px", margin: "0 auto" }}>
+            <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "10px", letterSpacing: "3px", color: "#555", marginBottom: "24px" }}>CURV — BRAND DIRECTION</p>
+            <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(36px, 6vw, 52px)", fontWeight: 400, color: "#f0f0f0", lineHeight: 1.1, marginBottom: "16px" }}>Your identity is not your health.</h1>
+            <p style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(36px, 6vw, 52px)", fontWeight: 400, fontStyle: "italic", color: "#666", lineHeight: 1.1, marginBottom: "40px" }}>It's everything else you do with it.</p>
           </div>
-        )}
 
-        {activeTab === "directions" && (
-          <div>
-            <Section title="Insinuation of Sex">
-              <p style={{ marginBottom: "20px" }}>Interesting people are attractive. The trait of being obsessed with your health, outwardly, is not. We paint a type of person who is worldly, and attractive.</p>
-              <p style={{ marginBottom: "20px" }}>The shots are suggestive, but never sexual. The pan stops before the reveal. The status comes from what you withhold.</p>
-              <p style={{ marginBottom: "20px" }}>The bare spine is a sexually suggestive, but elegant part of the body. Exactly what young healthy people look like.</p>
-              <p style={{ marginBottom: "20px" }}>Just presence. Fabric, breath, the sound of a room with someone in it. The subject exists independently of you. You just happen to be seeing them.</p>
-              <p>References: Wolfgang Tillmans, Isamaya Ffrench.</p>
-            </Section>
-
-            <Divider />
-
-            <Section title="Unmanaged Authenticity of London Skater, Fashion Crowd">
-              <p style={{ marginBottom: "20px" }}>Kate Moss smoking isn't despite the cigarette being bad for her, it's because she doesn't need your approval about it. She's cool because she's indifferent.</p>
-              <p style={{ marginBottom: "20px" }}>Rather than reframing back pain as sexy (it isn't), reframe the person as the kind of person who handles things quietly, without performing wellness at anyone. Anti-Lululemon, optimization-bro, "I just did 10,000 steps"-ification of youth culture.</p>
-              <p>Of course, Kate Moss doesn't wear a medical device, and would never be caught tracking anything. That's a design problem though.</p>
-            </Section>
-
-            <Divider />
-
-            <Section title="Health as Ornamentation">
-              <p style={{ marginBottom: "20px" }}>Something worth wearing that happens to know your body. The product belongs in the same category as backless dress chains, silver nails, jewellery — objects of desire that secretly contain your health.</p>
-              <p style={{ marginBottom: "20px" }}>The price is part of the aesthetic. Almost prohibitively expensive. Indifferent to men.</p>
-              <p>The only thing more powerful than sex is the insinuation of its possibility.</p>
-            </Section>
-          </div>
-        )}
-
-        {activeTab === "films" && (
-          <div>
-            <Section title="The Pan">
-              <p style={{ marginBottom: "20px" }}>A slow pan down a woman's bare spine, starting from the top. It looks like we're about to see everything — the anticipation is erotic. But what you see instead is the tape, slowly entering the frame from the top, laying gently along the spine.</p>
-              <p style={{ marginBottom: "20px" }}>The pan reaches the base of her back, stops just before revealing anything else. Then the dots come on — like a pulse landing.</p>
-              <p>Just skin, the strip, and the dots activating. The reveal is clinical where you expected sexual.</p>
-            </Section>
-
-            <Divider />
-
-            <Section title="The Bedroom">
-              <p style={{ marginBottom: "20px" }}>Two people. She's in front of him, takes her top off. She's shot from behind. He feels the strip on her back. He already knows, or doesn't care to ask. He just makes a quip about making her back pain worse. She giggles. That's it.</p>
-              <p style={{ marginBottom: "20px" }}>The sensor is just part of her the way a tattoo would be.</p>
-              <p>Versions with two guys, two girls, and a straight couple where the guy is wearing it — all played the same way. Nobody comments on the queerness or the gender flip. It's just Tuesday.</p>
-            </Section>
-
-            <Divider />
-
-            <Section title="The Club">
-              <p style={{ marginBottom: "20px" }}>She's in a club. Meets someone. Gives him her number via the nail — "scan me if you love me." Later that night she nearly passes out. Someone panics, scans the other nail — "scan me if I'm dying." Emergency info comes up, help is called.</p>
-              <p style={{ marginBottom: "20px" }}>He's already in her life because he scanned the first nail hours earlier. He shows up at the hospital with flowers.</p>
-              <p style={{ marginBottom: "20px" }}>Same object. Same night. Both functions activated. The nail saved her life. It also got her the guy.</p>
-              <p style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", color: "#e8e8e8", fontSize: "18px" }}>And she was just living.</p>
-            </Section>
-
-            <Divider />
-
-            <Section title="The Unsolved Brief">
-              <p style={{ marginBottom: "20px" }}>The structural question that needs answering:</p>
-              <p style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", color: "#e8e8e8", fontSize: "18px", marginBottom: "20px" }}>What does the viewer think they're watching in the first five seconds, and what do they realise they're actually watching by the end?</p>
-              <p>Every great product launch film has a turn. Before the turn they think they're watching one thing. After it they realise they're watching something else.</p>
-            </Section>
-          </div>
-        )}
-
-        {activeTab === "lexicon" && (
-          <div>
-            <div style={{ marginBottom: "56px" }}>
-              <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "10px", letterSpacing: "2px", color: "#555", marginBottom: "32px" }}>THE LINES THAT HIT</p>
-              {lexiconLines.map((item, i) => (
-                <div key={i} style={{ padding: "20px 0", borderBottom: "1px solid #1a1a1a", display: "flex", alignItems: "flex-start", gap: "16px" }}>
-                  <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", letterSpacing: "1px", color: item.tier === "core" ? "#ff6b35" : item.tier === "high" ? "#888" : "#444", marginTop: "6px", flexShrink: 0, width: "36px" }}>
-                    {item.tier === "core" ? "★★★" : item.tier === "high" ? "★★" : "★"}
-                  </span>
-                  <p style={{ fontFamily: "'Playfair Display', serif", fontSize: item.tier === "core" ? "22px" : item.tier === "high" ? "18px" : "16px", color: item.tier === "core" ? "#f0f0f0" : item.tier === "high" ? "#c0c0c0" : "#888", lineHeight: 1.4, fontStyle: "italic", margin: 0 }}>
-                    {item.line}
-                  </p>
-                </div>
+          <div style={{ position: "sticky", top: 0, zIndex: 10, background: "#0e0e0e", borderBottom: "1px solid #1a1a1a", padding: "0 32px" }}>
+            <div style={{ maxWidth: "720px", margin: "0 auto", display: "flex", gap: "24px", overflowX: "auto", paddingBottom: "1px" }}>
+              {tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  style={{
+                    background: "none",
+                    border: "none",
+                    borderBottom: activeTab === tab.id ? "1px solid #e8e8e8" : "1px solid transparent",
+                    padding: "16px 0",
+                    fontFamily: "'DM Mono', monospace",
+                    fontSize: "11px",
+                    letterSpacing: "1.5px",
+                    color: activeTab === tab.id ? "#e8e8e8" : "#555",
+                    cursor: "pointer",
+                    whiteSpace: "nowrap",
+                    transition: "all 0.2s",
+                  }}
+                >
+                  {tab.label}
+                </button>
               ))}
             </div>
           </div>
-        )}
 
-        {activeTab === "products" && (
-          <div>
-            <Section title="The Spine Strip">
-              <p style={{ marginBottom: "20px" }}>Flexible sensor tape that runs down the spine. Like the new backless dress chain — already fashion, just with a nervous system added. The form factor is inherently intimate. The spine is where someone touches you when they're being tender.</p>
-              <p>Embedding health in what you wear naturally, in a way that is unknown or unexpected. It's about the fashion. That's what matters.</p>
-            </Section>
+          <div style={{ padding: "48px 32px 96px", maxWidth: "720px", margin: "0 auto" }}>
 
-            <Divider />
+            {activeTab === "philosophy" && (
+              <div>
+                <Section title="The Core">
+                  <p style={{ marginBottom: "20px" }}>With Curv, the health just happens.</p>
+                  <p style={{ marginBottom: "20px" }}>It's either something worth wearing, or completely out of sight, out of mind.</p>
+                  <p style={{ marginBottom: "20px" }}>Your identity isn't your health, it's everything else you do with it.</p>
+                  <p style={{ marginBottom: "20px" }}>You build identity around the things Curv frees you to do. The camera is always pointed at the life. Curv is in the peripheral vision.</p>
+                  <p style={{ marginBottom: "20px" }}>Like the duck, composed on the surface, legs working underneath. The work is happening but it's nobody's business.</p>
+                  <p>The health just happens.</p>
+                </Section>
 
-            <Section title="The NFC Nail">
-              <p style={{ marginBottom: "20px" }}>A silver nail you wear. Two versions that look identical from the outside:</p>
-              <p style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", color: "#e8e8e8", fontSize: "18px", marginBottom: "12px" }}>"Scan me if you love me" — gives your number.</p>
-              <p style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", color: "#e8e8e8", fontSize: "18px", marginBottom: "20px" }}>"Scan me if I'm dying" — gives your health info.</p>
-              <p style={{ marginBottom: "20px" }}>Desire and mortality sitting next to each other on the same finger, indistinguishable from the outside. Nobody knows which nail is which. That ambiguity is the whole point.</p>
-              <p>Jewellery that contains you. The purest expression of the manifesto: the health just happens.</p>
-            </Section>
+                <Divider />
 
-            <Divider />
+                <Section title="The Enemy">
+                  <p style={{ marginBottom: "20px" }}>The joylessness of optimisation.</p>
+                  <p style={{ marginBottom: "20px" }}>Endless optimisation is sexless.</p>
+                  <p style={{ marginBottom: "20px" }}>Desexualization of your body in the name of optimizing it. What's the point of being healthier, if you aren't sexier? Nothing is more sexy than being at play. So confident in yourself, that you're nonchalant.</p>
+                  <p style={{ marginBottom: "20px" }}>Whoop, Oura etc. make you a slave to this score. What's the point of health if we become robots.</p>
+                  <p style={{ marginBottom: "20px" }}>And after asking you to endlessly optimise, to add insult to injury, they mare you with ugly jewellery.</p>
+                  <p>They make you mark yourself as a bro who's going to pull out his phone on a hinge date and stick it in the poor girls face, showing her all his stats. Just to be healthy? No thanks. Tech is not cool. Tech is a tool. Don't make it the identity.</p>
+                </Section>
 
-            <Section title="The World">
-              <p>A world around the idea of wearing your health. Objects of desire that secretly contain your health data. The product belongs in fashion. The price is part of the aesthetic — almost prohibitively expensive. The health is the secret inside the object.</p>
-            </Section>
+                <Divider />
+
+                <Section title="The Belief">
+                  <p style={{ marginBottom: "20px" }}>Your body is an instrument to play. It is not a fragile glass house. It is adaptable. You are adaptable. Strong bodies are beautiful, sexualised objects.</p>
+                  <p style={{ marginBottom: "20px" }}>Curv makes objects which free from health ailments, to do whatever you actually want to spend time.</p>
+                  <p style={{ marginBottom: "20px" }}>These objects are either beautiful or invisible, but never inbetween.</p>
+                  <p style={{ marginBottom: "20px" }}>We are here to increase your agency, not decrease it by anchoring you to some score.</p>
+                  <p style={{ marginBottom: "20px" }}>You don't need to optimise, you just need a nudge here and there, when it matters.</p>
+                  <p>Leading an interesting life. The health just happens.</p>
+                </Section>
+              </div>
+            )}
+
+            {activeTab === "directions" && (
+              <div>
+                <Section title="Insinuation of Sex">
+                  <p style={{ marginBottom: "20px" }}>Interesting people are attractive. The trait of being obsessed with your health, outwardly, is not. We paint a type of person who is worldly, and attractive.</p>
+                  <p style={{ marginBottom: "20px" }}>The shots are suggestive, but never sexual. The pan stops before the reveal. The status comes from what you withhold.</p>
+                  <p style={{ marginBottom: "20px" }}>The bare spine is a sexually suggestive, but elegant part of the body. Exactly what young healthy people look like.</p>
+                  <p style={{ marginBottom: "20px" }}>Just presence. Fabric, breath, the sound of a room with someone in it. The subject exists independently of you. You just happen to be seeing them.</p>
+                  <p>References: Wolfgang Tillmans, Isamaya Ffrench.</p>
+                </Section>
+
+                <Divider />
+
+                <Section title="Unmanaged Authenticity of London Skater, Fashion Crowd">
+                  <p style={{ marginBottom: "20px" }}>Kate Moss smoking isn't despite the cigarette being bad for her, it's because she doesn't need your approval about it. She's cool because she's indifferent.</p>
+                  <p style={{ marginBottom: "20px" }}>Rather than reframing back pain as sexy (it isn't), reframe the person as the kind of person who handles things quietly, without performing wellness at anyone. Anti-Lululemon, optimization-bro, "I just did 10,000 steps"-ification of youth culture.</p>
+                  <p>Of course, Kate Moss doesn't wear a medical device, and would never be caught tracking anything. That's a design problem though.</p>
+                </Section>
+
+                <Divider />
+
+                <Section title="Health as Ornamentation">
+                  <p style={{ marginBottom: "20px" }}>Something worth wearing that happens to know your body. The product belongs in the same category as backless dress chains, silver nails, jewellery — objects of desire that secretly contain your health.</p>
+                  <p style={{ marginBottom: "20px" }}>The price is part of the aesthetic. Almost prohibitively expensive. Indifferent to men.</p>
+                  <p>The only thing more powerful than sex is the insinuation of its possibility.</p>
+                </Section>
+              </div>
+            )}
+
+            {activeTab === "films" && (
+              <div>
+                <Section title="The Pan">
+                  <p style={{ marginBottom: "20px" }}>A slow pan down a woman's bare spine, starting from the top. It looks like we're about to see everything — the anticipation is erotic. But what you see instead is the tape, slowly entering the frame from the top, laying gently along the spine.</p>
+                  <p style={{ marginBottom: "20px" }}>The pan reaches the base of her back, stops just before revealing anything else. Then the dots come on — like a pulse landing.</p>
+                  <p>Just skin, the strip, and the dots activating. The reveal is clinical where you expected sexual.</p>
+                </Section>
+
+                <Divider />
+
+                <Section title="The Bedroom">
+                  <p style={{ marginBottom: "20px" }}>Two people. She's in front of him, takes her top off. She's shot from behind. He feels the strip on her back. He already knows, or doesn't care to ask. He just makes a quip about making her back pain worse. She giggles. That's it.</p>
+                  <p style={{ marginBottom: "20px" }}>The sensor is just part of her the way a tattoo would be.</p>
+                  <p>Versions with two guys, two girls, and a straight couple where the guy is wearing it — all played the same way. Nobody comments on the queerness or the gender flip. It's just Tuesday.</p>
+                </Section>
+
+                <Divider />
+
+                <Section title="The Club">
+                  <p style={{ marginBottom: "20px" }}>She's in a club. Meets someone. Gives him her number via the nail — "scan me if you love me." Later that night she nearly passes out. Someone panics, scans the other nail — "scan me if I'm dying." Emergency info comes up, help is called.</p>
+                  <p style={{ marginBottom: "20px" }}>He's already in her life because he scanned the first nail hours earlier. He shows up at the hospital with flowers.</p>
+                  <p style={{ marginBottom: "20px" }}>Same object. Same night. Both functions activated. The nail saved her life. It also got her the guy.</p>
+                  <p style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", color: "#e8e8e8", fontSize: "18px" }}>And she was just living.</p>
+                </Section>
+
+                <Divider />
+
+                <Section title="The Unsolved Brief">
+                  <p style={{ marginBottom: "20px" }}>The structural question that needs answering:</p>
+                  <p style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", color: "#e8e8e8", fontSize: "18px", marginBottom: "20px" }}>What does the viewer think they're watching in the first five seconds, and what do they realise they're actually watching by the end?</p>
+                  <p>Every great product launch film has a turn. Before the turn they think they're watching one thing. After it they realise they're watching something else.</p>
+                </Section>
+              </div>
+            )}
+
+            {activeTab === "lexicon" && (
+              <div>
+                <div style={{ marginBottom: "56px" }}>
+                  <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "10px", letterSpacing: "2px", color: "#555", marginBottom: "32px" }}>THE LINES THAT HIT</p>
+                  {lexiconLines.map((item, i) => (
+                    <div key={i} style={{ padding: "20px 0", borderBottom: "1px solid #1a1a1a", display: "flex", alignItems: "flex-start", gap: "16px" }}>
+                      <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", letterSpacing: "1px", color: item.tier === "core" ? "#ff6b35" : item.tier === "high" ? "#888" : "#444", marginTop: "6px", flexShrink: 0, width: "36px" }}>
+                        {item.tier === "core" ? "\u2605\u2605\u2605" : item.tier === "high" ? "\u2605\u2605" : "\u2605"}
+                      </span>
+                      <p style={{ fontFamily: "'Playfair Display', serif", fontSize: item.tier === "core" ? "22px" : item.tier === "high" ? "18px" : "16px", color: item.tier === "core" ? "#f0f0f0" : item.tier === "high" ? "#c0c0c0" : "#888", lineHeight: 1.4, fontStyle: "italic", margin: 0 }}>
+                        {item.line}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {activeTab === "products" && (
+              <div>
+                <Section title="The Spine Strip">
+                  <p style={{ marginBottom: "20px" }}>Flexible sensor tape that runs down the spine. Like the new backless dress chain — already fashion, just with a nervous system added. The form factor is inherently intimate. The spine is where someone touches you when they're being tender.</p>
+                  <p>Embedding health in what you wear naturally, in a way that is unknown or unexpected. It's about the fashion. That's what matters.</p>
+                </Section>
+
+                <Divider />
+
+                <Section title="The NFC Nail">
+                  <p style={{ marginBottom: "20px" }}>A silver nail you wear. Two versions that look identical from the outside:</p>
+                  <p style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", color: "#e8e8e8", fontSize: "18px", marginBottom: "12px" }}>"Scan me if you love me" — gives your number.</p>
+                  <p style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", color: "#e8e8e8", fontSize: "18px", marginBottom: "20px" }}>"Scan me if I'm dying" — gives your health info.</p>
+                  <p style={{ marginBottom: "20px" }}>Desire and mortality sitting next to each other on the same finger, indistinguishable from the outside. Nobody knows which nail is which. That ambiguity is the whole point.</p>
+                  <p>Jewellery that contains you. The purest expression of the manifesto: the health just happens.</p>
+                </Section>
+
+                <Divider />
+
+                <Section title="The World">
+                  <p>A world around the idea of wearing your health. Objects of desire that secretly contain your health data. The product belongs in fashion. The price is part of the aesthetic — almost prohibitively expensive. The health is the secret inside the object.</p>
+                </Section>
+              </div>
+            )}
+
           </div>
-        )}
+        </div>
+      );
+    }
 
-      </div>
-    </div>
-  );
-}
+    ReactDOM.createRoot(document.getElementById("root")).render(<CurvBrandDoc />);
+  </script>
+</body>
+</html>
